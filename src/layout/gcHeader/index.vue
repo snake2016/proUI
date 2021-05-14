@@ -14,7 +14,7 @@
         <user-menu></user-menu>
       </div>
     </div> -->
-    <el-row :gutter="10">
+    <el-row :gutter="10" class="nav-wraper">
         <el-col :span="6">
             <div class="content" :class="{lg: isCollapse}">
                 <i class="el-icon" :class="isCollapse?'el-icon-s-unfold':'el-icon-s-fold'"  @click="toggleSidebar"></i>
@@ -22,8 +22,14 @@
             <!-- 面包屑部分 纯展示 路由中配置 -->
             {{fullPathTitle}}
         </el-col>
-        <el-col :span="6" :offset="12">
-            右边部分
+        <el-col :span="6" :offset="12" class="right-panel">
+            <div class='box-icon'><i class="el-icon-search"></i></div>
+            <screenfull class="box-icon" />
+            <div class='box-user'>
+              <img class="avatar" :src="defaultAvatar" alt="" />
+              <span>陈未未</span>
+              <i class="el-icon-arrow-down"></i>
+            </div>
         </el-col>
     </el-row>
     <el-row :gutter="10">
@@ -39,11 +45,13 @@
 // import UserMenu from "./UserMenu";
 import GcMultiTab from '../gcMultiTab/index.vue';
 import { mapGetters } from 'vuex'
+import Screenfull from './mod/Screenfull.vue'
 
 export default {
   name: "gcHeader",
   components: {
-    GcMultiTab
+    GcMultiTab,
+    Screenfull,
 //     Logo,
 //     UserMenu
   },
@@ -61,7 +69,8 @@ export default {
   },
   data(){
       return {
-          fullPathTitle:this.$route.meta.fullPathTitle || this.$route.meta.title
+          fullPathTitle:this.$route.meta.fullPathTitle || this.$route.meta.title,
+          defaultAvatar: require("@/assets/imgs/temp/woman.png"),
       }
   },
   methods:{
@@ -90,6 +99,43 @@ export default {
         width: 100%;
     }
 }
+.nav-wraper {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
+  .right-panel {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .box-icon {
+      padding: 10px;
+      font-size: 16px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .box-user {
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+      padding-right: 30px;
+
+      .avatar {
+        margin-right: 15px;
+      }
+
+      .el-icon-arrow-down {
+        margin-left: 5px;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+}
 .content {
       float: left;
       width: calc(100%-275px);
@@ -102,8 +148,9 @@ export default {
       .el-icon {
         display: inline-block;
         margin-left: 20px;
-        font-size: 24px;
+        font-size: 20px;
         color: #2F87FE;
+        cursor: pointer;
       }
     }
 // .gcHeader {

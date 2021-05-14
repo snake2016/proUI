@@ -1,7 +1,7 @@
 
 <template>
   <div class="navLeft-container">
-    <div class="logo"></div>
+    <img class="logo" :src="logo" alt="" />
     <div class="border-1px-bottom" />
     <div class="nav-item" 
     :ref="'nav'+item.name"
@@ -30,7 +30,8 @@ export default {
   },
   data() {
     return {
-      hoverActive: ''
+      hoverActive: '',
+      logo: require('@/assets/imgs/temp/logo-white.png'),
     }
   },
   props: {
@@ -66,7 +67,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .navLeft-container {
-    padding: 17px 0px;
+    padding: 30px 0px;
     display: flex;
     flex-direction: column;
     width: 65px;
@@ -75,10 +76,8 @@ export default {
     box-sizing: border-box; 
    
     .logo {
-       margin: 0 20px;
-      width: 25px;
-      height: 35px;
-      border: 1px solid white;
+      margin: 0 20px;
+      width: 30px;
     }
     .border-1px-bottom {
       margin: 30px 20px;
@@ -95,6 +94,7 @@ export default {
       box-sizing: border-box; 
       color: white;
       font-size: 24px;
+      cursor: pointer;
       &.active {
         background: rgba(216, 216, 216, 0.35);
       }

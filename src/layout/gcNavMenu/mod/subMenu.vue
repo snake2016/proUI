@@ -94,6 +94,7 @@ export default {
       color: $font-color;
       border-radius: $item-border-radius;
       overflow: hidden;
+      cursor: pointer;
       &.active, &:hover {
         background: $item-hover-bg-color;
         color: $item-hover-font-color;

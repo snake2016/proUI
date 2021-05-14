@@ -5,10 +5,6 @@
  * @LastEditTime: 2021-05-13 17:19:58
  * @FilePath: \proUI\src\main.js
  */
-import { LS, SS } from '@/utils/storage';
-Window.LS=LS;
-Window.SS=SS
-
 import Vue from 'vue'
 import '@/assets/iconfont/iconfont.js'
 import router from '@/router'
@@ -18,11 +14,7 @@ import App from './App.vue'
 // 引入ElementUI
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import { message } from '@/utils/resetMessage.js';
-import { notify } from '@/utils/resetNotify.js';
 Vue.use(ElementUI);
-Vue.prototype.$message = message;
-Vue.prototype.$notify = notify;
 
 // 引入vuescroll
 import vuescroll from 'vuescroll';
@@ -37,6 +29,9 @@ Vue.use(directives)
 
 import filters from '@/filters'
 Vue.use(filters)
+
+import plugin from '@/plugin'
+Vue.use(plugin)
 
 Vue.config.productionTip = false;
 
