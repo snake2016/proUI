@@ -1,0 +1,242 @@
+// 数据为空时的展示
+.add-empty-box{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  div{
+    color: #999999;
+    margin-top: 30px;
+  }
+}
+.message-service{
+  background: #fff;
+  ::v-deep .el-dialog__header{
+    .dialog-title{
+      font-size: 14px;
+      color:#222222;
+      vertical-align:middle;
+      img{
+        width:24px;
+        vertical-align:middle;
+        margin-right:8px
+      }
+      i{
+        font-style: normal;
+        vertical-align: middle;
+      }
+    }
+  }
+  ::v-deep .el-dialog__body{
+    .el-form{
+      padding:24px 40px 0px 40px;
+      max-height: 390px;
+    }
+    .el-form-item__label{
+      text-align: left;
+      width: 130px!important;
+      line-height: 32px;
+    }
+    .el-form-item__content{
+      margin-left: 130px!important;
+    }
+    .el-form-item{
+      margin-bottom: 22px;
+    }
+    .button-area,.info-show{
+      .el-form-item__content{
+        margin-left: 0!important;
+      }
+    }
+    .button-area{
+      .el-form-item__content{
+        .el-button{
+          padding: 0;
+          width: 80px;
+          height: 32px;
+        }
+      }
+    }
+    .info-show{
+      padding-top: 22px;
+      margin-bottom: 0px;
+      padding-bottom: 10px;
+      .el-form-item__content{
+        color: #ABABAB;
+        span:nth-child(2){
+          margin-left: 20px;
+        }
+      }
+    }
+    .fixed{
+      .el-form-item__content{
+        background: #F5F5F5;
+        border-radius:4px;
+        border:1px solid rgba(217,217,217,1);
+        span{
+          display: inline-block;
+          width: 100%;
+          line-height: 32px;
+          padding-left: 12px;
+          color: #B3B3B3;
+        }
+      }
+    }
+    .fixed:hover{
+      cursor:not-allowed
+    }
+    .el-select{
+      width: 100%;
+      .el-input__inner{
+        height: 32px;
+        line-height: 32px;
+      }
+      .el-input__icon{
+        line-height: 32px;
+      }
+      // 改造下拉菜单
+      .select-option{
+        .el-select-dropdown__list{
+          padding:0 0 29px 0;
+          height: 100%;
+          .optionHeader{
+            padding: 0 20px;
+            display: flex;
+            background: #F1F2F6;
+            height: 35px;
+            line-height: 35px;
+            span{
+              flex: 33%;
+            }
+          }
+        }
+        .el-scrollbar{
+          // min-height: 300px;
+          padding-bottom:20px
+        }
+        .el-select-dropdown__wrap{
+          max-height: 300px;
+        }
+        .el-select-dropdown__item{
+          display: flex;
+          border-bottom: 1px solid #E6E6E6;
+          height: 43px;
+          line-height: 43px;
+          span{
+            flex: 33%;
+          }
+        }
+        .el-select-dropdown__item.hover, .el-select-dropdown__item:hover{
+          background: #DCE8FF;
+          color: #606366;
+        }
+        .el-select-dropdown__item.selected{
+          color: #606366;
+        }
+        .fenye-block{
+          width: 100%;
+          padding-right: 20px;
+          position: absolute;
+          bottom: 15px;
+          display: flex;
+          justify-content: flex-end;
+          .total{
+            margin-right: 20px;
+            color: #606266;
+            i{
+              font-style: normal;
+            }
+          }
+          .pagenation{
+            img,span{
+              vertical-align: middle;
+            }
+            .unavaiable:hover{
+              cursor: not-allowed;
+            }
+            .currentpage{
+              padding:6px 10px;
+              border: 1px solid rgba(240,242,245,1);
+              border-radius:2px;
+              margin:0 11px 0 20px;
+            }
+            .totalpage{
+              margin:0 20px 0 11px;
+            }
+          }
+        }
+      } 
+    }
+  }
+  ::v-deep .el-dialog__footer{
+    padding: 14px 0 14px 40px;
+    text-align: left;
+    box-shadow:0px -1px 4px 0px rgba(0,33,77,0.1);
+    .el-button{
+      padding: 0;
+      width: 80px;
+      height: 32px;
+    }
+  }
+  .more{
+    .el-button{
+      padding: 0;
+      width: 100px;
+      height: 32px;
+    }
+  }
+}
+// 微信和短信按钮切换区
+.meaasge-service-header{
+  padding: 14px 0 14px 24px;
+  span{
+    display: inline-block;
+    width: 70px;
+    height: 38px;
+    border: 1px solid rgba(220,223,229,1);
+    text-align: center;
+    line-height: 38px;
+    color: #4E4E4E;
+    cursor: pointer;
+  }
+  span:nth-child(1){
+    border-right: none;
+  }
+  .active{
+    background: #2F87FE;
+    color: #fff;
+  }
+}
+// 主内容区
+.meaasge-service-content{
+  width: 100%;
+  height:calc(100% - 66px);
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  .meaasge-service-page{
+    display: flex;
+    justify-content: space-between;
+  }
+  ::v-deep .el-table__empty-text{
+    i{
+      font-style: normal;
+      display: block;
+      margin-top: -40px;
+    }
+  }
+  ::v-deep .el-table .cell{
+    line-height: 32px;
+  }
+  ::v-deep .el-table__body-wrapper{
+    height: calc(100% - 48px)!important;
+  }
+  .operation{
+    color:#2F87FE;
+    cursor: pointer;
+  }
+}
+
+

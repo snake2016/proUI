@@ -1,0 +1,210 @@
+.template-role-group-page{
+  height: 100%;
+  .template-role-group-title{
+    height: 64px;
+    line-height: 24px;
+    border-bottom: 1px solid rgba(170, 178, 193, .2);
+    position: relative;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .columnIcon {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    span{
+      font-size:16px;
+      font-family:SourceHanSansCN-Medium,SourceHanSansCN;
+      font-weight:550;
+      color:rgba(34,34,34,1);
+    }
+    .add-role-group-btn{
+      position: absolute;
+      right: 24px;
+      top: 16px;
+      width: 116px;
+      border:1px solid #2F87FE;
+      color:#2F87FE;
+    }
+  }
+  .template-role-group-content{
+    height: calc(100% - 64px);
+    position: relative;
+    min-height: 200px;
+    padding:  24px 5px;
+    .template-role-group-wrap{
+      height: 100%;
+      overflow: auto;
+      .template-role-group-box{
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: top;
+        flex-wrap: wrap;
+        padding: 4px;
+        margin:0 13px;
+        .template-role-group-item{
+          width: calc(50% - 12px);
+          height: 270px;
+          background:rgba(255,255,255,1);
+          box-shadow: rgba(25,54,128,0.2) 0px 0px 4px; 
+          border-radius:2px;
+          margin-bottom: 24px;
+          padding: 16px 24px;
+          .group-item-title{
+            font-size:14px;
+            font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+            font-weight:550;
+            color:rgba(78,78,78,1);
+            line-height: 30px;
+          }
+          .group-item-num{
+            font-size:12px;
+            font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+            font-weight:400;
+            color:rgba(153,153,153,1);
+            line-height: 20px;
+            margin-bottom:16px;
+          }
+          .group-item-ul{
+            padding: 0;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0;
+            overflow: auto;
+            height:calc(100% - 86px);
+            .group-item-li{
+              width: 50%;
+              height: 30px;
+              font-size:12px;
+              float: left;
+              font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+              font-weight:400;
+              color:rgba(61,111,179,1);
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              .columnIcon {
+                width: 12px;
+                height: 12px;
+                vertical-align: middle;
+                margin-right: 4px;
+              }
+            }
+          }
+          .group-item-footer{
+            font-size:12px;
+            font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+            font-weight:400;
+            color:rgba(125,140,179,1);
+            line-height: 20px;
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+            .group-item-footer-left{
+              cursor: pointer;
+            }
+            .group-item-footer-right{
+               cursor: pointer;
+               margin-left: 18px;
+            }
+          }
+        }
+      }
+    }
+    .details-empty-data{
+      height:100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      top:0;left:0;bottom:0;right:0;
+      z-index: 1;
+      color: #999;
+    }
+  }
+  .role-group-content{
+    height: 100%;
+    overflow: hidden;
+    .role-group-form-content{
+      height: 160px;
+      padding: 24px;
+      border-top: 1px solid rgba(170, 178, 193, .4);
+    }
+    .role-group-tree-content{
+      height: calc(100% - 210px);
+      padding: 20px;
+      background: rgba(245, 248, 255, 1);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .role-group-content-left{
+        height: 100%;
+        border-right: 1px dashed rgba(196, 205, 230, 1);
+        width: 50%;
+        .role-group-content-left-title{
+          height:40px;
+          line-height: 40px;
+        }
+        .role-group-content-left-box{
+          height: calc(100% - 40px);
+          .active-left-tree{
+            color: #2F87FE
+          }
+        }
+      }
+      .role-group-content-right{
+        height: 100%;
+        width: 50%;
+        padding-left: 24px;
+        .role-group-content-right-title{
+          height:40px;
+          line-height: 40px;
+          
+        }
+        .role-group-content-right-box{
+          height: calc(100% - 40px);
+          .right-box-ul{
+            height: 30px;
+            width: 100%;
+            line-height: 30px;
+            font-size:12px;
+            font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+            font-weight:400;
+            color:rgba(61,111,179,1);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .columnIcon {
+              width: 14px;
+              height: 14px;
+              vertical-align: middle;
+              margin-right: 8px;
+            }
+            
+          }
+        }
+      }
+      
+    }
+    .role-group-form-footer{
+      height: 50px;
+      line-height: 50px;
+      padding-left: 20px;
+      .role-group-editform-footer{
+        position: relative;
+        .editform-btn{
+          position: absolute;
+          right: 24px;
+          top: 10px;
+
+        }
+      }
+    }
+  }
+}

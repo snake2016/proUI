@@ -1,0 +1,88 @@
+@mixin border_bm {
+  border-bottom: 1px solid #DCDFE6;
+}
+$color_msg: #666; // 信息小字的颜色
+$ic_box_p: 25px; // 左右padding
+// 费用信息内容区
+.body-fee{
+  color: $color_msg;
+  // 阶梯价和阶梯量容器
+  .box-jieti{
+    padding: 1px $ic_box_p;
+    @include border_bm;
+    .first-title{
+      width: 80px;
+    }
+  }
+  // 其他费用容器
+  $titleW: 86px;
+  .box-other{
+    color: #4E4E4E;
+    padding: 1px $ic_box_p;
+    position: relative;
+    .firstTitle{
+      width: $titleW;
+      margin: 16px 0;
+      font-size: 16px;
+      font-weight:500;
+      color: #222222;
+    }
+    // 垃圾费列表容器
+    .rubbishBox{
+      max-height: 200px;
+      overflow-y: auto;
+      position: relative;
+      display: inline-block;
+      padding: 0 16px;
+      margin-left: $titleW;
+      background: #D8EBFF;
+      border-radius: 4px;
+      
+      &::before{
+        content: "";
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        border-width: 0 6px 6px;
+        border-style: solid;
+        border-color: transparent transparent #D8EBFF;
+        top: -6px;
+        left: 160px;
+      }
+    }
+    .row-info{
+      .first-title{
+        width: $titleW;
+      }
+      .fee{
+        width: 140px;
+      }
+      // 状态
+      .state{
+        width: 50px;
+        &.no{
+          color: #EC6B60;
+        }
+      }
+      // 垃圾费展开详情
+      .openMore{
+        color: #7B97CC;
+        cursor: pointer;
+      }
+      .set{
+        cursor: pointer;
+      }
+    }
+  }
+}
+.tip-bt{
+  display: inline-block;
+  margin-right: 6px;
+  cursor: pointer;
+  &:hover{
+    color: #409eff;
+  }
+  &:last-child{
+    margin-right: 0;
+  }
+}

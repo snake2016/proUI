@@ -1,0 +1,335 @@
+/* 储值和补气栏 */
+// 每块的圆角
+$block_radius: 8px;
+// 标签
+$tab_headH: 37px;
+.tab-head-box{
+  height: $tab_headH;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  .tab{
+    width: 82px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4E4E4E;
+    border-radius:4px 0px 0px 0px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    // 正方形部分，包含文字
+    .fang{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: calc(100% - 16px);
+      height: 100%;
+      background: #FAB995;
+      border-radius:0px 4px 0px 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    // 三角部分
+    .sj{
+      width: 16px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 1px;
+      overflow: hidden;
+      border-radius: 4px 0 0 0;
+      &:after{
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 20px;
+        top:0;
+        left: 0px;
+        z-index: 1;
+        background: #FAB995;
+        transform: rotateZ(68deg);
+        transform-origin: top left;
+        cursor: pointer;
+      }
+    }
+    // 激活状态
+    &.active{
+      height: $tab_headH;
+      color: #fff;
+      z-index: 3;
+      .fang{
+        background: #F9A968;
+      }
+      .sj{
+        &:after{
+          background: #F9A968;
+        }
+      }
+    }
+    // 第二个标签向前偏移
+    &.sec{
+      left: -18px;
+    }
+  }
+}
+$store_padding_big: 20px; // 外面大的内边距
+$store_padding_small: 16px; // 里面小的内边距
+// 下方储值和补气主内容区域
+.s-qi-body{
+  min-height: 100px;
+  background: linear-gradient(to bottom, #F9A765, #F58838);
+  border-radius: 0 4px 4px 4px;
+  padding: $store_padding_big;
+}
+.store-tab-body{
+  // 购气金额和购气量白色区域
+  .white-box{
+    border-radius: $block_radius;
+    background: #fff;
+    width: 100%;
+    // height: 160px;
+    margin-bottom: $store_padding_big;
+    padding: 1px 0;
+    .white-row{
+      height: 86px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      &.no-b{
+        margin-bottom: 0;
+      }
+      &.t-1{
+        height: auto;
+        margin-bottom: 10px;
+      }
+      &.sec2{
+        // border-top: 1px dashed #ddd;
+      }
+      .bt-box{
+        width: 100%;
+        padding: 0 $store_padding_small;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .bt{
+          font-size: 16px;
+          color: #666;
+        }
+        .num{
+          font-size: 20px;
+          color: #222;
+          font-weight: bold;
+          width: 200px;
+        }
+      }
+      .danWei{
+        // margin-top: 6px;
+        color: #ABABAB;
+        font-size: 16px;
+        text-align: right;
+        width: 100%;
+        padding: 0 $store_padding_small;
+      }
+    }
+    // 远传表只有充值金额框
+    &.bq-ycb{
+      .white-row{
+        height: 86px;
+      }
+      .bt-box{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  // 阶梯试算和其他费用的外层容器
+  .store-fee-box{
+    border-radius: $block_radius;
+    // padding: $store_padding_big;
+    padding: 8px;
+    background: #F9AC71;
+    margin-bottom: $store_padding_big;
+    color: #fff;
+    $p: 5px;
+    .title {
+      padding-left: $p;
+      margin-bottom: $p;
+    }
+    table{
+      width: 100%;
+      border-spacing: 0;
+      th{
+        font-weight: normal;
+        text-align: left;
+        padding: $p;
+        &:first-child{
+          // width: 16%;
+        }
+        &:nth-child(2){
+          // width: 24%;
+        }
+        &:nth-child(3){
+          // width: 29%;
+        }
+        &:nth-child(4){
+          // width: 29%;
+        }
+      }
+      td{
+        text-align: left;
+        padding: $p;
+      }
+    }
+    &.mb-none{
+      margin-bottom: 0;
+    }
+    &.bqm{
+      padding-bottom: 20px;
+    }
+    // 补气类型下拉框
+    .bq-select{
+      width: 100%;
+      margin: 5px 0 20px 0;
+    }
+    ::v-deep textarea{
+      font-family: sans-serifs;;
+    }
+  }
+}
+// 虚线
+.xuxian{
+  width: 100%;
+  height: 0px;
+  border-top: 1px dashed #ddd;
+}
+.single-row{
+  margin: 24px 0 10px 0;
+  color: #fff;
+  position: relative;
+  &.small-jianxi{
+    margin: 10px 0 24px 0;
+  }
+  .num{
+    font-weight: bold;
+    text-align: right;
+  }
+  .bt{
+    width: 100%;
+    height: 31px;
+    background: #fff;
+    border-radius: 4px;
+    color: #4E4E4E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .5s;
+    &:hover{
+      background: #409eff;
+      color: #fff;
+    }
+    &.disable{
+      cursor: not-allowed;
+      background: #f4f4f5;
+      color: #909399;
+      &:hover{
+        background: #f4f4f5;
+        color: #909399;
+      }
+    }
+  }
+}
+.pay-box{
+  width: 100%;
+  &.bqlx{
+    margin-bottom: 20px;
+  }
+}
+
+// 其他费用多选框组
+.check-group{
+  width: 100%;
+  $mb: 14px;
+  padding: 8px 0;
+  ::v-deep{
+    // 每一行
+    .el-checkbox{
+      color: #fff;
+      width: 100%;
+      height: 19px;
+      position: relative;
+      // 虚线
+      &:after{
+        content: "";
+        position: absolute;
+        bottom: -$mb;
+        left: 0;
+        width: 100%;
+        height: 0;
+        border-bottom: 1px dashed #ddd;
+      }
+      &:last-child{
+        margin-bottom: 0;
+        &:after{
+          border-bottom: none;
+        }
+      }
+      // 选中项的标题
+      .el-checkbox__label{
+        position: absolute;
+        left: 0;
+        top: 0px;
+        padding-left: 5px;
+      }
+      // 选中状态时的文字颜色
+      .el-checkbox__input.is-checked+.el-checkbox__label{
+        color: #fff;
+      }
+      // 选中框
+      .el-checkbox__input{
+        position: absolute;
+        top: 3px;
+        right: 0;
+      }
+    }
+  }
+}
+
+.otherCostDialog{
+  .title{
+    img{
+      width: 24px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    span{
+      vertical-align: middle;
+      color: #222222;
+    }
+  }
+  ::v-deep .el-dialog__body{
+   .otherCostForm{
+     min-height: 210px;
+     padding: 24px 40px 10px 40px;
+     .el-form-item:nth-last-child(1){
+       margin-bottom: 0;
+     }
+   }
+  }
+  .el-dialog__footer{
+    .el-button{
+      padding:0;
+      width: 80px;
+      height: 32px;
+    }
+  }
+  .otherType{
+    width: 70%;
+  }
+}

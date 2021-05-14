@@ -1,0 +1,171 @@
+.fill {
+  display: flex;
+  align-items: flex-start;
+}
+.left-box {
+  flex: 574 574;
+  margin-right: 24px;
+  height: 100%;
+  overflow-y: auto;
+  .panel {
+    width: 100%;
+    height: 172px;
+    background: #fff;
+    margin-bottom: 24px;
+    .content {
+      display: flex;
+      align-items: center;
+      height: calc(100% - 48px);
+      padding: 0 24px;
+      .user {
+        color: #4E4E4E;
+        >div {
+          display: inline-flex;
+        }
+      }
+    }
+  }
+}
+// 右侧-白名单管理
+.right-box {
+  flex: 657 657;
+  background: #fff;
+  height: 100%;
+  .content {
+    display: flex;
+    height: calc(100% - 48px);
+    align-items: flex-start;
+    .noData { // 无数据
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #999;
+    }
+    .list-box {
+      width: 100%;
+      height: 100%;
+      padding: 14px 24px;
+      .el-form {
+        width: 100%;
+        .el-form-item {
+          width: 100%;
+          ::v-deep .el-form-item__content {
+            width: 100%;
+          }
+        }
+      }
+      .addUser {
+        width: 100%;
+        ::v-deep .el-input__inner {
+          border-radius: 0;
+          border: none;
+          border-bottom: 1px solid #c4cbd4;
+        }
+      }
+      .username {
+        margin-bottom: 30px;
+      }
+      ul {
+        width: 100%;
+        height: calc(100% - 66px);
+        overflow-y: auto;
+        li {
+          color: #222222;
+          height: 46px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          border-bottom: 1px solid #EEF0F3;
+          .rm-box { // 移除按钮
+            color: #2F87FE;
+            cursor: pointer;
+            &:hover {
+              color: #409eff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 靠右的弹性盒子
+.flex-box-right {
+  display: flex;
+  position: absolute;
+  right: 24px;
+  height: 100%;
+  align-items: center;
+}
+// 标题头
+.head-box {
+  height: 48px;
+  width: 100%;
+  padding: 0 24px;
+  color: #222222;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EEF0F3;
+  position: relative;
+}
+// 新增账号弹窗
+.add-dialog{
+  .dialog-title{
+    display: flex;
+    align-items: center;
+    >img{
+      margin-right: 8px;
+    }
+  }
+  // 弹窗主体
+  .d-box {
+    height: 162px;
+    padding: 20px 40px;
+    position: relative;
+    // 表单行
+    .fo-item {
+      color: #4E4E4E;
+      margin-bottom: 30px;
+      .label {
+        width: 60px;
+        position: relative;
+        &.long {
+          width: 150px;
+        }
+        &.require::before {
+          content: "*";
+          color: #f00;
+          position: absolute;
+          left: -9.5px;
+          top: 2.5px;
+        }
+      }
+      .el-input {
+        width: 327px;
+      }
+      // 纯文本
+      .value {
+        width: 327px;
+      }
+      ::v-deep {
+        // 表单行
+        .el-form-item__content {
+          display: flex;
+          align-items: center;
+        }
+        // 错误提示
+        .el-form-item__error {
+          padding-left: 100px;
+        }
+      }
+    }
+  }
+  // 弹窗底部
+  .dialog-footer {
+    button {
+      width: 80px;
+      margin-right: 20px;
+    }
+  }
+}

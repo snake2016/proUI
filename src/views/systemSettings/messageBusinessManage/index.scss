@@ -1,0 +1,188 @@
+.msg-bs-manage-wrap{
+    height: 100%;
+    width: 100%;
+    padding: 14px  0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+    .msg-bs-manage-left{
+        width: 360px;
+        height: 100%;
+        border-right:  1px  dashed #C4CDE6;
+        // padding: 0 10px;
+        .msg-bs-manage-left-title-box{
+          padding: 0 10px;
+          width:100%;
+          .msg-bs-manage-left-title{
+            height: 36px;
+            border-bottom: 1px solid rgba(170, 178, 193, .2);
+            font-size:16px;
+            font-family:SourceHanSansCN-Medium,SourceHanSansCN;
+            font-weight:550;
+            color:rgba(34,34,34,1);
+            padding: 0 14px 14px;
+            position:relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            
+            .role-manage-icon-btn{
+              position: absolute;
+              right: 0;
+              top: 0;
+             
+            }
+          }
+        }
+        
+        .msg-bs-manage-left-treebox{
+            height: 100%;
+            .msg-bs-manage-left-tips-box{
+              padding: 0 10px;
+              .msg-bs-manage-left-tips{
+                width: 100%;
+                height: 32px;   
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+                margin: 20px 0 8px;
+                border: 1px solid rgba(217,217,217,1);
+                border-radius:4px;
+                .left-tips{
+                  width: 50%;
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  font-size: 14px;
+                  color: #999999;
+                  align-items: center;
+                  &:nth-of-type(1){
+                    box-sizing: border-box;
+                    border-right: 1px solid rgba(217,217,217,1);
+                  }  
+                  &.active-btn{
+                    background:rgba(47,135,254,1);
+                    span{
+                      color: #fff;
+                    }
+                  }
+                }
+              }
+            }
+            
+            .msg-bs-manage-left-tree{
+              height: calc(100% - 106px);
+              position: relative;
+              .msg-bs-manage-menu{
+                height: 100%;
+                .msg-bs-manage-menu-item{
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  height: 40px;
+                  padding: 0 10px;
+                  cursor: pointer;
+                  .menu-item-left{
+                    flex: 1;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                  }
+                  &.menu-active{
+                    background: #DCE8FF;
+                  }
+                  &:hover{
+                    background: rgba(220,232,255,.4);
+                  }
+                }
+               
+              }
+              .details-empty-data{
+                height:100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                top:0;left:0;bottom:0;right:0;
+                z-index: 1;
+                color: #999;
+              }
+              .active-tree{
+                color: #2F87FE;
+              }
+            }
+        }
+       
+    }
+    .msg-bs-manage-right{
+        flex: 1;
+        height: 100%;
+        padding: 0 10px;
+        .msg-bs-manage-right-title{
+            height: 36px;
+            border-bottom: 1px solid rgba(170, 178, 193, .2);
+            font-size:16px;
+            font-family:SourceHanSansCN-Medium,SourceHanSansCN;
+            font-weight:550;
+            color:rgba(34,34,34,1);
+            padding: 0 14px;
+        }
+        .msg-bs-manage-right-details{
+            height: calc(100% - 78px);
+            // background: red;
+            position: relative;
+            .details-item{
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: top;
+                height: 40px;
+                padding-top: 10px;
+                .details-item-left{
+                  width: 120px;
+                }
+                .details-item-right{
+                  flex: 1;
+                }
+            }
+            .details-empty-data{
+                height:100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                top:0;left:0;bottom:0;right:0;
+                z-index: 1;
+                color: #999;
+            }
+        }
+        .msg-bs-manage-right-footer{
+            padding: 0 12px;
+        }
+    }
+}
+.columnIcon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.dialog-footer{
+  text-align: left
+}
+.operation {
+  color: #ababab;
+  font-size: 14px;
+  margin-top: 30px;
+  .operation_div {
+    display: inline-block;
+    margin-right: 20px;
+  }
+}

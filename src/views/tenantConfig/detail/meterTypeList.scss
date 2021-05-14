@@ -1,0 +1,62 @@
+.content.meterList{
+  padding: 0;
+  background: #fff;
+  .left-box{
+    width: 74.4%;
+    height: 100%;
+    float: left;
+    border-right: 1px dashed #C4CDE6;
+    .main-box{
+      height: calc(100% - 52px);
+      padding: 0 24px;
+      // 条件容器
+      .tj-box{
+        width: 70%;
+        display: flex;
+        align-items: center;
+        height: 60px;
+      }
+      // 表格容器
+      .tb-box{
+        width: 100%;
+        height: calc(100% - 60px);
+      }
+    }
+  }
+  .right-box{
+    float: right;
+    width: 25.6%;
+    height: 100%;
+    .granted-box{
+      padding: 10px 24px 10px 24px;
+      height: calc(100% - 52px);
+      overflow-y: scroll;
+      color: #4E4E4E;
+      $xh: 22px;
+      .granted-item{
+        margin-bottom: 10px;
+        // 第一行
+        .row1{
+          height: 36px;
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: bold;
+          // 前面的序号
+          .index{
+            width: $xh;
+            display: inline-block;
+          }
+        }
+        // 第二行
+        .row2{
+          padding-left: $xh;
+        }
+      }
+    }
+  }
+}
+.null-box{
+  position: relative;
+}

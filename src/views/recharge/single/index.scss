@@ -1,0 +1,444 @@
+*{
+  box-sizing: border-box;
+}
+.contain{
+  display: flex;
+  height: 100%;
+}
+.fill{
+  width: 100%;
+  height: 100%;
+}
+// 左部分每块内容之间上下的间距
+$leftM: 24px;
+.sec-left{
+  // width: 68.90%;
+  width: calc(100% - 24px - 366px);
+  margin-right: 24px;
+  height: 100%;
+}
+// 左边小块内边距
+$box1Pd: 20px;
+.box1{
+  margin-bottom: $leftM;
+  background: #fff;
+  border-radius: 4px;
+}
+.box-header{
+  height: 48px;
+  display: flex;
+  align-items: center;
+  color: #222;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  border-bottom: 1px solid #f1f2f5;
+  padding-left: $box1Pd;
+  img{
+    width: 24px;
+    margin-right: 8px;
+    position: relative;
+    top: 0px;
+  } 
+}
+.box-body{
+  padding: $box1Pd;
+}
+$conditionHeight: 32px;
+// 条件搜索框
+.conditionBox{
+  max-width: 100%;
+  height: $conditionHeight;
+  width: 866px;
+  position: relative;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.sec-right{
+  width: 366px;
+}
+// IC卡和费用的背景颜色
+.lv{
+  background: #E9F6FE;
+  border-radius: 4px;;
+}
+@mixin border_bm {
+  border-bottom: 1px solid #DCDFE6;
+}
+$color_bt: #222; // 标题的颜色
+$ic_headerH: 72px; // 头部第一行的高度
+$ic_head_fz: 20px; // 头部大标题的字号
+$fz_msg: 14px; // 信息小字的字号
+$color_msg: #666; // 信息小字的颜色
+$color_go: #2E87FE; // 跳转链接的颜色
+// IC卡信息
+$ic_box_p: 25px; // 左右padding
+// 大标题样式
+@mixin ic_bt{
+  font-weight: bold;
+  font-size: $ic_head_fz;
+  color: $color_bt;
+}
+// 小字信息每行样式
+@mixin ic_msgRow{
+  font-size: $fz_msg;
+  display: flex;
+  align-items: center;
+  color: $color_msg;
+  margin: 16px 0;
+}
+.header-ic{
+  height: $ic_headerH;
+  @include border_bm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $ic_box_p;
+  .right{
+    display: flex;
+    align-items: flex-end;
+    line-height: 1;
+  }
+  .bt{
+    @include ic_bt;
+  }
+  .jin_e{
+    color: $color_go;
+    font-size: $ic_head_fz;
+    margin: 0 6px;
+  }
+  .dwei{
+    color: #4E4E4E;
+    font-size: $fz_msg;
+  }
+}
+.body-ic{
+  padding: 1px $ic_box_p; // 加1px上下padding防止margin塌陷
+}
+// 费用头部
+.header-fee{
+  display: flex;
+  // flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: $ic_headerH;
+  padding: 0 $ic_box_p;
+  @include border_bm;
+  .l{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    &.je{
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      line-height: 100%;
+      .box{
+        display: flex;
+        align-items: baseline;
+      }
+      .big{
+        font-size: 20px;
+        font-weight: bold;
+        color: #222;
+        &.num{
+          color: #EC6D62;
+          margin-right: 6px;
+        }
+      }
+      .small{
+        font-size: 14px;
+        color: #4E4E4E;
+      }
+    }
+  }
+  .bt{
+    @include ic_bt;
+  }
+  .type{
+    margin-top: 6px;
+  }
+}
+// 信息区每行的样式
+.row-info{
+  @include ic_msgRow;
+  // ic卡充值增加累购次数字段
+  .row-left {
+    display: inline-flex;
+    flex: 0 0 262px;
+  }
+  .row-right {
+    display: inline-flex;
+    flex: 1;
+  }
+  .lab{
+    width: 80px;
+    flex-shrink: 0;
+  }
+  .val{
+    width: 100%;
+  }
+  .jt{
+    display: inline-flex;
+    &:nth-child(1){
+      width: 80px;
+    }
+    &:nth-child(2){
+      width: 180px;
+    }
+    &:nth-child(3){
+      min-width: 200px;
+      margin-right: 8px;
+    }
+    &:nth-child(4){
+      width: 100px;
+    }
+  }
+  // 底部按钮区域
+  &.end{
+    justify-content: flex-end;
+    // 只有一个按钮时
+    .go{
+      cursor: pointer;
+      // 存在两个按钮时中间的间距
+      &.first{
+        margin-right: 20px;
+      }
+    }
+    .icon{
+      color: $color_go;
+      margin-right: 6px;
+    }
+    .txt{
+      color: $color_go;
+    }
+    // 费用信息的底部按钮区域
+    &>span{
+      flex-shrink: 0;
+    }
+    .first-title{
+      width: 90px;
+    }
+    .fee{
+      width: 130px;
+    }
+    .state{
+      width: 50px;
+      &.no{
+        color: #EC6B60;
+      }
+    }
+    .set{
+      cursor: pointer;
+    }
+    // 阶梯价和阶梯量底部两个按钮的容器
+    .goBox{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+// 读卡
+.dkBox{
+  width: 100px;
+  height: 32px;
+  padding: 14px;
+  margin-bottom: 14px;
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: .3s;
+  color: $color_msg;
+  // border: 1px solid #dcdfe6;
+  &:hover{
+    border-color: #3a8ee6;
+    color: #3a8ee6;
+  }
+  >img{
+    margin-right: 10px;
+    height: 22px;
+  }
+}
+// 缴费完成的弹窗
+.payDialog{
+  ::v-deep .el-dialog__body{
+    padding: 20px 40px;
+  }
+  ::v-deep .el-dialog__header{
+    height: 0;
+    border-bottom: none;
+  }
+  .info-box{
+    height: 90px;
+    background: #F8F9FE;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .sec{
+      // width: 160px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      .numBox{
+        display: flex;
+        align-items: flex-end;
+        .num{
+          font-size: 20px;
+          color: #222;
+          font-weight: bold;
+          margin-right: 6px;
+          line-height: 1;
+        }
+      }
+    }
+  }
+  .annius{
+    margin: 20px 0 0 0;
+    height: 32px;
+    button{
+      flex-grow: 0;
+      padding: 0;
+      width: 80px;
+      height: 32px;
+      &:first-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+// 缴费完成的字和图
+.dialog-msgBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .title{
+    margin: 20px 0;
+  }
+}
+// 确认缴费的弹窗
+.recharge-confirm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ::v-deep {
+    .el-dialog{
+      .el-dialog__header{
+        height: 25px;
+        border-bottom: none;
+      }
+      .el-dialog__body{
+        padding: 0px 40px 20px 60px;
+        .confirm{
+          img{
+            width: 18px;
+            vertical-align: top;
+            margin-left: -18px;
+            padding-top: 4px;
+          }
+          span{
+            display: inline-block;
+            margin-left: 10px;
+            color: #222222;
+            i{
+              font-style: normal;
+              color: #2F87FE;
+              padding-right: 5px;
+              font-weight: 500;
+            }
+          }
+        }
+        .warn{
+          margin: 4px 0 0 10px;
+          span{
+            color: #ABABAB;
+            font-size: 12px;
+          }
+        }
+      }
+      .el-dialog__footer{
+        padding: 10px 0 25px 60px;
+        text-align: left;
+        .el-button{
+          padding: 0;
+          width: 80px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+
+// 表单验证样式重置
+.noStyle{
+  ::v-deep{
+    .el-form-item{
+      margin-bottom: 0;
+    }
+    .el-form-item__content{
+      line-height: normal;
+      font-size: inherit;
+    }
+  }
+}
+.yl{
+  ::v-deep .el-form-item__error{
+    color: #ff0;
+  }
+}
+
+// 充值和补气按钮置底的样式方案
+.sec-right{
+  height: 100%;
+}
+.store-contain{
+  height: calc(100% - 60px);
+  position: relative;
+}
+.store-contain .s-qi-body{
+  height: calc(100% - 37px - 60px);
+  position: relative;
+  border-radius: 0 4px 0 0;
+  overflow-y: auto;
+}
+.single-row.czbq-box{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: #F58534;
+  box-shadow: 0px -3px 4px 0px rgba(128,53,0,0.1);
+  border-radius: 0 0 4px 4px;
+}
+.contain .sec-left{
+  overflow-y: auto;
+}
+
+::v-deep{
+  .el-input__suffix-inner{
+    div{
+      color: #ccc;
+      font-weight: 400;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 12px;
+      transform: translate(-100%,-50%);
+    }
+  }
+}

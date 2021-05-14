@@ -1,0 +1,145 @@
+.cd-box{
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  ::v-deep .el-input__inner{
+    border-radius: 0;
+  }
+  ::v-deep .el-form-item__content{
+    line-height: normal;
+  }
+  ::v-deep .el-input--suffix .el-input__inner {
+    color: #909399;
+  }
+}
+$lableW: 116px;
+.lableBox{
+  width: $lableW;
+  height: 100%;
+  float: left;
+}
+$btW: 42px;
+.rBt{
+  width: $btW;
+  height: 100%;
+  background: #F6F8FA;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #DCDFE6;
+  cursor: pointer;
+  // 搜索图标
+  >i{
+    font-size: 16px;
+    color: #AAB2C1;
+  }
+}
+.centerBox{
+  width: calc(100% - #{$lableW} - #{$btW});
+  height: 100%;
+  background: #fff;
+  float: left;
+  position: relative;
+  ::v-deep .el-form-item{
+    margin-bottom: 0;
+  }
+  $mH: 500px;
+  .result-box{
+    width: 100%;
+    height: $mH;
+    overflow-y: hidden;
+    background: #fff;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    z-index: 3;
+    border-radius: 4px;
+    border: 1px solid #f1f2f5;
+    color: #666;
+    .list-box{
+      width: 100%;
+      padding: 10px;
+      padding-bottom: 0;
+      height: $mH - 40;
+      position: relative;
+      overflow-y: scroll;
+    }
+    .item-box{
+      cursor: pointer;
+      width: auto;
+      border-bottom: 1px dashed #ddd;
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+    .aMsg{
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      margin: 6px 6px 6px 0;
+      &.curS{
+        color: #2E87FE;
+      }
+    }
+    .closeBox{
+      height: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: #fff;
+      z-index: 3;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        background: #7dbcfc;
+        color: #fff;
+      }
+      @keyframes mymove
+      {
+        from {top: 5px;}
+        to {top: -5px;}
+      }
+      .el-icon-arrow-up{
+        position: relative;
+        margin-right: 6px;
+        animation: mymove .8s infinite;
+      }
+    }
+  }
+}
+$bh1: 32px;
+// 地址外容器
+.cd-addrBox{
+  border: 1px solid #DCDFE6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-left: none;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  .col8{
+    width: 33.33%;
+    height: $bh1;
+  }
+  // 去除el-form-item标签对子元素样式的影响
+  ::v-deep .el-form-item__content{
+    line-height: normal;
+    font-size: inherit;
+  }
+}
+.addrItem{
+  width: 100%;
+  ::v-deep .el-input__inner{
+    height: $bh1;
+  }
+}

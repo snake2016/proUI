@@ -1,0 +1,48 @@
+// 档案信息样式--start
+.dangan{
+  color: #666;
+}
+.row-da{
+  margin-bottom: 16px;
+  &.last{
+    margin-bottom: 0;
+  }
+}
+.box-da-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.last{
+    margin-bottom: 0;
+  }
+  .lab{
+    width: 80px;
+    flex-shrink: 0;
+  }
+  .val{
+    width: 100%;
+  }
+}
+// 无档案信息时占位
+.kongBox{
+  width: 100%;
+  // 输入框宽度+上下margin
+  height: calc(100% - 32px - 28px);
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  color: #B4B4B6;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  >div{
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+.c9{
+  color: #999;
+}
+// 档案信息样式--end

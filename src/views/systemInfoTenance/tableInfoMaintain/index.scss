@@ -1,0 +1,58 @@
+.table-info-maintain-wrap{
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .table-info-maintain-nav{
+      width: 180px;
+      height: 100%;
+      margin-right: 24px;
+
+      .nav-ul{
+        background: #fff;
+        .nav-item-li{
+            cursor: pointer;
+            height: 55px;
+           
+            line-height: 55px;
+            font-size:14px;
+            font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+            font-weight:400;
+            color:rgba(102,102,102,1);
+            padding: 0 20px;
+            // &:hover{
+            //     color:rgba(47,135,254,1);
+            // }
+            &.nav-li-active{
+                border-radius:4px 0px 0px 4px;
+                line-height: 55px;
+                font-size:14px;
+                font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+                font-weight:400;
+                color:rgba(47,135,254,1);
+                background:rgba(47,135,254,0.1);
+                padding: 0 20px;
+                position: relative;
+                &::before{
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  display: block; 
+                  width: 4px;
+                  height:55px;
+                  background: linear-gradient(135deg,rgba(148,237,255,1) 0%,rgba(87,143,255,1) 100%);
+                  border-radius:4px 0px 0px 4px;
+                }
+            }
+            .demo{
+              fill: red
+            }
+        }
+      }
+  }
+  .table-info-maintain-content{
+    flex: 1;
+    height: 100%;
+    background: #fff;
+  }
+}

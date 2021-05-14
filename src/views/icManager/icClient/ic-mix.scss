@@ -1,0 +1,103 @@
+
+// ic下载组件弹窗
+.ic-down-box{
+  $p: 20px;
+  // 弹窗标题
+  .box-header {
+    height: 48px;
+    display: flex;
+    // padding-left: $p;
+    align-items: center;
+    color: #222;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    img {
+      width: 24px;
+      margin-right: 8px;
+      position: relative;
+      top: 0px;
+    }
+  }
+  // 底部按钮
+  .footer-box{
+    bottom: $p;
+    left: $p;
+    display: flex;
+    align-items: center;
+  }
+  
+  .com-box{
+    color: #222;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 14px 40px;
+    // 每行的每一个元素
+    .r{
+      width: 46%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      // 小图标
+      img.co{
+        width: 16px;
+        margin-right: 8px;
+      }
+      // 标题
+      .zi{
+        display: flex;
+        width: 180px;
+      }
+      // 下载
+      .dl{
+        color: #2F87FE;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  ::v-deep {
+    .el-dialog__header{
+      .title{
+        img{
+          width: 24px;
+          margin-right: 8px;
+          vertical-align: middle;
+        }
+        span{
+          vertical-align: middle;
+          color: #222222;
+        }
+      }
+    }
+    .el-dialog__headerbtn {
+      top: 17px;
+    }
+    .el-dialog__body{
+      min-height: 210px;
+    }
+    .el-dialog__footer{
+      .el-button{
+        padding:0;
+        width: 80px;
+        height: 32px;
+      }
+    }
+  }
+}
+// 读卡状态弹窗
+.ic-state-box{
+  ::v-deep .el-dialog__body{
+    position: static;
+    padding: 0;
+    width: 300px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+  }
+  .icon{
+    margin-right: 8px;
+  }
+}

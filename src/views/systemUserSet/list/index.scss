@@ -1,0 +1,141 @@
+.fill {
+  background: #fff;
+}
+// 新增按钮
+.bt-box {
+  height: 60px;
+  padding-left: 24px;
+  display: flex;
+  align-items: center;
+}
+.tb-box {
+  width: 100%;
+  height: calc(100% - 60px);
+}
+// 表格
+.table {
+  width: 100%;
+  height: calc(100% - 52px);
+  overflow-y: auto;
+  padding: 0 24px;
+  color: #222222;
+}
+// 分页
+.fenye{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 24px;
+  .fontSize{
+    font-weight: normal;
+  }
+}
+::v-deep {
+  .el-table thead {
+    color: #222222;
+  }
+}
+.el-table::before {
+  display: none;
+}
+// 暂无数据
+.noData {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+}
+// 文字按钮
+.btSpan {
+  color: #2F87FE;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 16px;
+  &.last {
+    margin-right: 0;
+  }
+  &:hover {
+    color: #409eff;
+  }
+}
+// 新增用户、编辑用户的弹窗
+.edit-dialog{
+  .dialog-title{
+    display: flex;
+    align-items: center;
+    >img{
+      margin-right: 8px;
+    }
+  }
+  // 弹窗主体
+  .d-box {
+    padding: 20px 40px;
+    position: relative;
+    // 表单行
+    .fo-item {
+      color: #4E4E4E;
+      width: 100%;
+      .label {
+        width: 100px;
+        padding-right: 10px;
+        position: relative;
+        line-height: 1.5;
+        &.require::before {
+          content: "*";
+          color: #f00;
+          position: absolute;
+          left: -8px;
+          top: 2.5px;
+        }
+      }
+      .el-input {
+        width: calc(100% - 130px);
+      }
+      .el-select {
+        width: calc(100% - 130px);
+      }
+      .el-textarea {
+        width: calc(100% - 130px);
+      }
+      ::v-deep {
+        // 表单行
+        .el-form-item__content {
+          display: flex;
+          align-items: center;
+        }
+        // 错误提示
+        .el-form-item__error {
+          padding-left: 100px;
+        }
+      }
+    }
+  }  // 弹窗底部
+  .dialog-footer {
+    button {
+      width: 80px;
+      margin-right: 20px;
+    }
+  }
+}
+.el-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.row-2 {
+  width: 50%;
+  height: 42px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.edit-dialog .d-box .row-2.remark .fo-item {
+  ::v-deep {
+    .el-form-item__content {
+      align-items: flex-start;
+    }
+  }
+}

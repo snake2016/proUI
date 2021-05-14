@@ -1,0 +1,44 @@
+.operation-record{
+  background: #fff;
+}
+.operation-record .main-box{
+  position: relative;
+  padding: 12px 6px 0 12px;
+  width: 100%;
+  height: 100%;
+}
+// 列表暂无内容时的占位图
+.none-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top:0;left:0;bottom:0;right:0;
+  z-index: 1;
+  color: #999;
+}
+// 分页
+.fenye{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  .fontSize{
+    font-weight: normal;
+  }
+}
+::v-deep {
+  .el-table thead>tr>th{
+    background: #FAFAFC;
+  }
+  .el-table th>.cell{
+    color: #222;
+  }
+  .el-table__body-wrapper{
+    height: calc(100% - 48px);
+    overflow-y: scroll;
+  }
+  .el-table::before{
+    display: none;
+  }
+}

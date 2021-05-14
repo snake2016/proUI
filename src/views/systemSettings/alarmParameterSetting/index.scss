@@ -1,0 +1,114 @@
+.alarm-setting{
+  .alarm-setting-left{
+    .left-title.alarm-left-title{
+      border-top-width: none;
+    }
+    .table-type{
+        padding: 10px 16px;
+        background:rgba(47,135,254,0.1);
+        position: relative;
+        ::v-deep .el-select{
+          .el-input__inner{
+            width: 238px;
+            height: 32px;
+            line-height: 32px;
+            color:#2F87FE;
+            padding: 0 15px 0 80px;
+          }
+          .el-input__icon{
+            line-height: 32px;
+          }
+        }
+        .fixed-text{
+          line-height: 32px;
+          padding-left: 10px;
+          color: #2F87FE;
+        }
+    }
+    .left-menu.alarm-left-menu{
+      padding:20px;
+      height:calc(100% - 112px);
+      .empty{
+        height:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+          display: block;
+          margin-top: 30px;
+          text-align: center;
+          color: #999;
+        }
+      }
+    }
+  }
+  .alarm-right{
+    padding: 0 0px 24px 24px!important;
+    .alarm-content{
+      .el-checkbox-group{
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: space-between;
+        .alarm-content-box{
+          // width: 45%;
+          .control-padding{
+            // width: 45%;
+            // max-width: ;
+            width:465px;
+            padding-top: 30px;
+            .one-checked{
+              width: 100%;
+              padding: 30px 0 0 24px;
+              span{
+                color: #4E4E4E;
+                display: inline-block;
+                width: 140px;
+              }
+            }
+            .for-center{
+              display: flex;
+              align-items: center;
+            }
+          }
+          ::v-deep .el-checkbox{
+            display: flex;
+            align-items: center;
+          }
+          ::v-deep .el-checkbox__label{
+            display: inline-block;
+            width: 130px;
+            word-break: normal;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow: hidden 
+          }
+          ::v-deep .el-checkbox__input{
+            vertical-align: top;
+            padding-top: 4px;
+          }
+          ::v-deep .el-checkbox__input.is-checked+.el-checkbox__label{
+            color: #4E4E4E;
+          }
+        }
+        .alarm-input{
+          display: inline-block;
+          width: 200px;
+          padding-left: 20px;
+          vertical-align: top;
+          ::v-deep .el-input__inner{
+            height: 32px;
+            line-height: 32px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+        }
+        .one-checked{
+          display: inline-block;
+          width: 166px;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}

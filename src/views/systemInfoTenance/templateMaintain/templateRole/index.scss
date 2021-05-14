@@ -1,0 +1,227 @@
+.template-role-page{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .template-role-left{
+        width: 300px;
+        height: 100%;
+        border-right:  1px  dashed #C4CDE6;
+        .template-role-left-title-box{
+          // padding: 0 10px;
+          width:100%;
+          .template-role-left-title{
+            height: 50px;
+            border-bottom: 1px solid rgba(170, 178, 193, .2);
+            font-size:16px;
+            font-family:SourceHanSansCN-Medium,SourceHanSansCN;
+            font-weight:550;
+            color:rgba(34,34,34,1);
+            padding: 15px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: top;
+            .columnIcon {
+              width: 24px;
+              height: 24px;
+              vertical-align: middle;
+              margin-right: 8px;
+            }
+        }
+        }
+        
+        .template-role-left-treebox{
+            padding-top: 16px;
+            height: 100%;
+            .template-role-left-tree{
+                height: calc(100% - 42px);
+            }
+        }
+       
+    }
+    .template-role-right{
+        flex: 1;
+        height: 100%;
+        .template-role-right-title-box{
+          // padding: 0 10px;
+          .template-role-right-title{
+            height: 50px;
+            border-bottom: 1px solid rgba(170, 178, 193, .2);
+            font-size:16px;
+            font-family:SourceHanSansCN-Medium,SourceHanSansCN;
+            font-weight:550;
+            color:rgba(34,34,34,1);
+            padding: 15px;
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: top;
+            .columnIcon {
+              width: 24px;
+              height: 24px;
+              vertical-align: middle;
+              margin-right: 8px;
+            }
+            .create-template-btn{
+              position: absolute;
+              right: 14px;
+              top: 8px;
+              width: 116px;
+              border:1px solid #2F87FE;
+              color:#2F87FE;
+            }
+          }
+        }
+        
+        .template-role-right-details{
+            height: calc(100% - 44px);
+            padding: 0 5px;
+            position: relative;
+            .details-item{
+                width: 100%;
+                padding: 0 24px;
+                .details-item-box{
+                  border-bottom: 1px dashed rgba(217, 217, 217, 1);
+                  
+                }
+                &.selectedActive{
+                  border: 2px solid #5584FF;
+                  background: #FCFCFC;
+                  margin-top: -1px;
+                  .details-item-box{
+                    border-bottom: none;
+                    
+                  }
+                }
+                
+                .details-item-title{
+                  height: 40px;
+                  line-height: 40px;
+                }
+                .details-item-ul{
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  height: 100%;
+                  padding: 5px;
+                  li{
+                    width: 220px;
+                    height: 120px;
+                    background:rgba(255,255,255,1);
+                    box-shadow:0px 1px 4px 0px rgba(25,54,128,0.2);
+                    border-radius:2px;
+                    margin-right:24px;
+                    margin-bottom: 24px;
+                    padding: 10px 20px ;
+                    position: relative;
+                    .item-title{
+                      font-size:16px;
+                      font-weight:400;
+                      line-height: 30px;
+                      color:rgba(47,135,254,1);
+                      overflow: hidden; 
+                      text-overflow: ellipsis;
+                      white-space: nowrap;
+                    }
+                    .item-org{
+                      font-size:12px;
+                      color:rgba(128,128,128,1);
+                      overflow: hidden; 
+                      text-overflow: ellipsis;
+                      white-space: nowrap;
+                    }
+                    .item-footer{
+                      display: flex;
+                      justify-content: flex-start;
+                      align-items: center;
+                      position: absolute;
+                      bottom: 10px;
+                      .item-footer-left{
+                        cursor: pointer;
+                        span{
+                          font-size:12px;
+                          font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+                          font-weight:400;
+                          color:rgba(125,140,179,1);
+                          line-height:18px;
+                        }
+                      }
+                      .item-footer-right{
+                        margin-left:18px;
+                        cursor: pointer;
+                        span{
+                          font-size:12px;
+                          font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+                          font-weight:400;
+                          color:rgba(125,140,179,1);
+                          line-height:18px;
+
+                        } 
+                      }
+                    }
+                  }
+                }
+            }
+            .details-empty-data{
+                height:100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                top:0;left:0;bottom:0;right:0;
+                z-index: 1;
+                color: #999;
+            }
+        }
+        .template-role-right-footer{
+            padding: 0 12px;
+        }
+    }
+    .role-content{
+      height: 100%;
+      overflow: hidden;
+      .role-form-content{
+        height: 160px;
+        padding: 24px;
+        border-top: 1px solid rgba(170, 178, 193, .4);
+      }
+      .role-tree-content{
+        height: calc(100% - 210px);
+        padding: 20px;
+        background: rgba(245, 248, 255, 1);
+        .role-tree-content-title{
+          height:40px;
+          line-height: 40px;
+        }
+        .role-tree-content-box{
+          height: calc(100% - 40px);
+          
+        }
+      }
+      .role-form-footer{
+        height: 50px;
+        line-height: 50px;
+        padding-left: 20px;
+      }
+    }
+}
+
+.dialog-footer{
+  text-align: left
+}
+.operation {
+  color: #ababab;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-left: 10px;
+  .operation_div {
+    display: inline-block;
+    margin-right: 20px;
+  }
+}

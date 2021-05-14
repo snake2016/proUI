@@ -1,0 +1,318 @@
+.depart-staff-manage-wrap{
+    height: 100%;
+    width: 100%;
+    padding: 13px  0 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+    .depart-staff-manage-left{
+        width: 360px;
+        height: 100%;
+        border-right:  1px  dashed #C4CDE6;
+        
+        .depart-staff-manage-left-title-box{
+          padding: 0 10px;
+          width:100%;
+          .depart-staff-manage-left-title{
+            height: 36px;
+            border-bottom: 1px solid rgba(170, 178, 193, .2);
+            font-size:16px;
+            font-family:SourceHanSansCN-Medium,SourceHanSansCN;
+            font-weight:550;
+            color:rgba(34,34,34,1);
+            padding: 0 14px 13px;
+            position:relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .depart-staff-manage-icon-btn{
+              position: absolute;
+              right: 0;
+              top: 0;
+            }
+          }
+        }
+        
+        .depart-staff-manage-left-treebox{
+            padding-top: 10px;
+            height: 100%;
+            position: relative;
+            .depart-staff-manage-left-tree{
+              height: calc(100% - 36px);
+              padding: 0 5px;
+              .depart-staff-manage-menu{
+                height: 100%;
+                .depart-staff-manage-menu-item{
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  .menu-item-left{
+                    flex: 1;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                  }
+                  .menu-item-right{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                  }
+                }
+               
+              }
+              .data-locked{
+                color:rgba(201,201,201,1);
+              }
+              .active-tree{
+                color: #2F87FE;
+              }
+              
+            }
+            .depart-staff-manage-left-tree-empty{
+              height:100%;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              position: absolute;
+              top:0;left:0;bottom:0;right:0;
+              z-index: 1;
+              margin-top:-28px;
+              color: #999;
+            }
+        }
+       
+    }
+    .depart-staff-manage-right{
+        flex: 1;
+        height: 100%;
+        padding: 0 10px;
+        position:relative;
+        .details-empty-data{
+          height:100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          position: absolute;
+          top:0;left:0;bottom:0;right:0;
+          z-index: 1;
+          color: #999;
+        }
+        .depart-staff-manage-right-title{
+            height: 36px;
+            border-bottom: 1px solid rgba(170, 178, 193, .2);
+            font-size:16px;
+            font-family:SourceHanSansCN-Medium,SourceHanSansCN;
+            font-weight:550;
+            color:rgba(34,34,34,1);
+            padding: 0 14px 13px;
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .span-isLocked-title{
+              color:rgba(201,201,201,1);
+            }
+            .right-title-btn{
+              position: absolute;
+              right: 0;
+              top: -4px;
+            }
+        }
+        .depart-staff-manage-right-details{
+            height: calc(100% - 36px);
+            position: relative;
+            .details-box{
+                width: 100%;
+                height: 100%;
+                .details-content{
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  span:nth-of-type(1){
+                    width: 100px;
+                    font-size:14px;
+                    font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+                    font-weight:400;
+                    color:rgba(78,78,78,1);
+                  }
+                  span:nth-of-type(2){
+                    flex:1;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    font-size:14px;
+                    font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+                    font-weight:400;
+                    color:rgba(78,78,78,1);
+                  }
+                }
+                .details-selected-employees{
+                  height: 40px;
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  margin-top:22px;
+                  .input-with-select{
+                    width: 400px;
+                  }
+                  .input-with-title{
+                    flex: 1;
+                    color:rgba(153,153,153,1);
+                    font-size: 14px;
+                  }
+                }
+                .employees-card-list{
+                  height: calc(100% - 170px);
+                  margin-top: 12px;
+                  position: relative;
+                  min-height: 200px;
+                  .details-empty-data{
+                    height:100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    position: absolute;
+                    top:0;left:0;bottom:0;right:0;
+                    z-index: 1;
+                    color: #999;
+                  }
+                  .employees-card-list-ul{
+                    height: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    // padding:20px 0 0;
+                    .employees-card-list-li{
+                      height: 220px;
+                      padding: 45px 0 0;
+                      width: 190px;
+                      background:url('../../../assets/imgs/defaultPerson.png');
+                      margin: 0 24px 20px 0;
+                      &.employees-card-list-woman{
+                        background:url('../../../assets/imgs/personOne.png');
+                      }
+                      &.employees-card-list-man{
+                        background:url('../../../assets/imgs/personTwo.png');
+                      }
+                      &.resigned {
+                        background: url("../../../assets/imgs/resigned.png");
+                      }
+                      .list-li-box{
+                        height: 175px;
+                        // box-shadow:0px 2px 25px 0px rgba(0,0,0,0.1);
+                        border-radius:4px;
+                        overflow: hidden;
+                        position: relative;
+                        padding-top: 68px;
+                        .text-item{
+                         padding: 0 12px;
+                         display: flex;
+                         justify-content: flex-start;
+                         align-items: center;
+                         span:nth-of-type(1){
+                           font-size:14px;
+                           font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+                           font-weight:400;
+                           width: 50px;
+                           color:rgba(255,255,255,.8);
+                         }
+                         span:nth-of-type(2){
+                           font-size:14px;
+                           flex:1;
+                           font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+                           font-weight:400;
+                           color:rgba(255,255,255,.8);
+                           overflow: hidden;
+                           text-overflow: ellipsis;
+                           white-space: nowrap;
+                         }
+                        }
+                       .btn-list-modal{
+                         display: none
+                       }
+                       &:hover{
+                         .btn-list-modal{
+                            height: auto;
+                            width: 170px;
+                            position: absolute;
+                            bottom: 10px;
+                            left: 50%;
+                            z-index: 100;
+                            
+                            margin-left: -85px ;
+                            
+                            text-align: center;
+                            font-size:12px;
+                            display: block;
+                            font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+                            font-weight:400;
+                            color:rgba(255,255,255,.9);
+                            .btn-query-details{
+                              height: 40px;
+                              line-height: 40px;
+                              background: rgba(0,0,0,.6);
+                              border-radius:4px;
+                              cursor: pointer;
+                            }
+                            .btn-change-details{
+                              height: 40px;
+                              line-height: 40px;
+                              background: rgba(0,0,0,.6);
+                              border-radius:4px;
+                              cursor: pointer;
+                              margin-top: 10px;
+                            }
+                       
+                         }
+                       }
+                      }
+                    }
+                 }
+                }
+                
+            }
+            .details-empty-data{
+                height:100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                top:0;left:0;bottom:0;right:0;
+                z-index: 1;
+                color: #999;
+            }
+        }
+        .depart-staff-manage-right-footer{
+            padding: 0 12px;
+        }
+    }
+}
+.columnIcon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.dialog-footer{
+  text-align: left
+}
+.operation {
+  color: #ababab;
+  font-size: 14px;
+  margin-top: 30px;
+  .operation_div {
+    display: inline-block;
+    margin-right: 20px;
+  }
+}

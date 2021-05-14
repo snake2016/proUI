@@ -1,0 +1,294 @@
+.role-manage-wrap{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+    .role-manage-wrap-left{
+        width: 360px;
+        height: 100%;
+        border-right:  1px  dashed #C4CDE6;
+        
+        .role-manage-wrap-left-title-box{
+          width: 100%;
+          padding: 0 10px;
+          .role-manage-wrap-left-title{
+            height: 50px;
+            border-bottom: 1px solid rgba(170, 178, 193, .2);
+            font-size:16px;
+            font-family:SourceHanSansCN-Medium,SourceHanSansCN;
+            font-weight:550;
+            color:rgba(34,34,34,1);
+            padding: 0 14px;
+            position:relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .role-manage-icon-btn{
+              position: absolute;
+              right: 0;
+              top: 14px;
+              cursor: pointer;
+              .addModeIcon{
+                width: 18px;
+                height: 18px;
+                vertical-align: middle;
+                margin-right: 8px;
+              }
+              .addModeRoleIcon{
+                width: 16px;
+                height: 16px;
+                vertical-align: middle;
+                margin-right: 8px;
+              }
+            }
+          }
+        } 
+        
+        .role-manage-wrap-left-treebox{
+            padding-top: 8px;
+            height: 100%;
+            .role-manage-wrap-left-tree{
+              height: calc(100% - 62px);
+              position: relative;
+              padding: 0 5px;
+              .details-empty-data{
+                height:100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                top:0;left:0;bottom:0;right:0;
+                z-index: 1;
+                color: #999;
+              }
+              .role-manage-menu{
+                height: 100%;
+                .role-manage-menu-item{
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  line-height: 40px;
+                  padding: 0 20px;
+                  cursor: pointer;
+                  color:rgba(78,78,78,.7);
+                  &.activeMenu{
+                    color: #2F87FE;
+                    background: #DCE8FF;
+                  }
+                  .menu-item-left{
+                    
+                    width: 270px;
+                    // display: flex;
+                    // justify-content: flex-start;
+                    // align-items: center;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  }
+                  .menu-item-right{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                  }
+                }
+               
+              }
+              .active-tree{
+                color: #2F87FE;
+              }
+            }
+        }
+       
+    }
+    .scrollRoleBox{
+      height: calc(100% - 50px)!important;//更改滚动条样式
+    }
+    .role-manage-wrap-right{
+        flex: 1;
+        height: 100%;
+        padding: 0 10px;
+        .role-manage-wrap-right-title{
+            height: 50px;
+            border-bottom: 1px solid rgba(170, 178, 193, .2);
+            font-size:16px;
+            font-family:SourceHanSansCN-Medium,SourceHanSansCN;
+            font-weight:550;
+            color:rgba(34,34,34,1);
+            padding: 0 14px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .role-manage-wrap-right-details{
+            height: calc(100% - 100px);
+            // position: relative;
+            .details-box{
+              height: 100%;
+              .details-onePart{
+                height: 105px;
+                .title{
+                  height: 40px;
+                  line-height: 40px;
+                  font-size:14px;
+                  font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+                  font-weight:400;
+                  color:rgba(153,153,153,1);
+                }
+              }
+            }
+            .details-tree{
+              height: calc(100% - 95px);
+              text-align: left;
+              .details-tree-title{
+                height: 30px;
+                line-height: 30px;
+                font-size:14px;
+                font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+                font-weight:400;
+                color:rgba(153,153,153,1);
+              }
+              .details-tree-content{
+                
+                position: relative;
+              }
+            }
+            .role-manage-wrap-right-footer{
+              height: 50px;
+              width: calc(100% + 52px);
+              line-height: 50px;
+              margin-left: -26px;
+              padding-left: 24px;
+              border-top: 1px solid rgba(170,178,193,.2);
+            }
+            .details-empty-data{
+                height:100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                top:0;left:0;bottom:0;right:0;
+                z-index: 1;
+                color: #999;
+            }
+        }
+        
+    }
+}
+.columnIcon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.dialog_appGroup--content{
+  max-height: 390px;
+  min-height: 210px;
+  padding: 10px 40px;
+  overflow: auto;
+  .content-resource{
+    min-height: 144px;
+    width:100%;
+    .content-resource-ul{
+      width: 100%;
+      height: 100%;
+      li{
+        width: 100%;
+        height: auto;
+        margin-bottom: 16px;
+        .title{
+          height: 40px;
+          width: 100%;
+          line-height: 40px;
+          width: 100%;
+          font-size:14px;
+          font-family:SourceHanSansCN-Regular,SourceHanSansCN;
+          font-weight:400;
+          color:#4E4E4E;
+        }
+        .content-details{
+          height: auto;
+          width: 100%;
+          padding: 0 20px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-wrap:wrap;
+          font-size: 14px;
+          .content-details-ul{
+            width: 50%;
+            height: 30px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color:#666666;
+            font-size: 12px;
+          
+          }
+          .content-details-empty{
+            height: 50px;
+            width: 100%;
+            line-height: 50px;
+            text-align: center;
+            color:rgba(102,102,102,.4);
+          }
+        }
+      }
+    }
+    
+  }
+  .operation {
+    color: #ababab;
+    font-size: 14px;
+    margin-top: 14px;
+    .operation_div {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+}
+.dialog_resource--content{
+  max-height: 390px;
+  min-height: 210px;
+  padding: 10px 40px;
+  overflow: auto;
+  .content-resource{
+    min-height: 144px;
+    width:100%;
+    .content-resource-ul{
+      width: 100%;
+      height: 100%;
+      li{
+        width: 50%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        color:#4E4E4E;
+        float: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        
+      }
+    }
+  }
+  .operation {
+    color: #ababab;
+    font-size: 14px;
+    height: 20px;
+    margin-top: 30px;
+    .operation_div {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+}
+.dialog-footer{
+  text-align: left;
+}
