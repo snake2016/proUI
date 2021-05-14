@@ -230,16 +230,23 @@ export default {
 <style lang="scss" scoped>
 ::v-deep .el-tabs--card {
   .el-tabs__header {
+    border-bottom: none;
+    margin-bottom: 0;
     .el-tabs__nav {
       border: 0;
     }
     .el-tabs__item {
       border-left: 0;
+      font-size: 14px;
+      color: #666;
+      .el-icon-close {
+        width: 14px;
+      }
     }
     .el-tabs__item.is-active {
-      border-bottom: 2px solid #404cbf;
-      color: #404cbf;
-      background: antiquewhite;
+      color: #3d8ef8;
+      background: #d8e8fe;
+      bottom: -1px;
     }
     .el-icon-close:before {
       transform: scale(1);

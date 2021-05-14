@@ -87,7 +87,8 @@ export default {
 .el-container{
     height: 100%;
     .el-header{
-        height: auto !important
+        height: auto !important;
+        padding: 0;
     }
 }
 .banner {
@@ -153,12 +154,11 @@ export default {
 
 .el-main {
   width: 100%;
-  max-width: 1600px;
   height: calc(100% - 96px);
   margin: 0 auto;
   padding: 14px 0 11px 0;
   box-sizing: border-box;
-  background-color: #ebf1f6;
+  background-color: #edeef9;
 
   overflow: hidden;
 }
